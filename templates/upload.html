@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AiCysVoice</title>
+  <!-- Bootstrap CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <div class="container text-center text-light mt-5">
+    <h1 class="display-4 mb-4 neon-text">🔒 AiCysVoice</h1>
+
+    <form method="POST" action="/upload" enctype="multipart/form-data" class="upload-center">
+      <!-- زر اختيار الملف -->
+      <label for="file-upload" class="btn-cyber">📂 Choose File</label>
+      <input id="file-upload" type="file" name="file" required style="display:none;">
+      <!-- زر الرفع -->
+      <button type="submit" class="btn-cyber">⬆ Upload & Analyze</button>
+    </form>
+  </div>
+
+  <!-- الماتريكس -->
+  <canvas id="matrix"></canvas>
+  <script src="{{ url_for('static', filename='matrix.js') }}"></script>
+</body>
+</html>
